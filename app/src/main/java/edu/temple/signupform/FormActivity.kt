@@ -20,21 +20,29 @@ class FormActivity : AppCompatActivity() {
 
         val toast = Toast.makeText(applicationContext, "Name: "+ name.getText().toString() + "\n Email: " + email.getText().toString() + "\n Password: " + password.getText().toString(), duration)
 
+        var error = true
         if(name.getText().toString() == ""){
-            name.error = "Name no good"
+            name.error = "Name is empty"
+            error = false
         }
         if(email.getText().toString() == ""){
-            email.error = "Email no good"
+            email.error = "Email is empty"
+            error = false
         }
         if(password.getText().toString() == ""){
-            password.error = "Password no good"
+            password.error = "Password is empty"
+            error = false
         }
         if(confPassword.getText().toString() == ""){
-            confPassword.error = "Confirm password no good"
+            confPassword.error = "Confirm password is empty"
+            error = false
         }
         if(!password.getText().toString().equals(confPassword.getText().toString())){
-            confPassword.error = "Confirm password defenitly no good"
+            confPassword.error = "Confirm password not the same as password"
+            error = false
         }
-        toast.show()
+        if(error == true){
+            toast.show()
+        }
     }
 }
