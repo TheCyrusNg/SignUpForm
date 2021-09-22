@@ -18,7 +18,7 @@ class FormActivity : AppCompatActivity() {
         val confPassword = findViewById<EditText>(R.id.txtConfPassword)
         val duration = Toast.LENGTH_SHORT
 
-        val toast = Toast.makeText(applicationContext, "Name: "+ name.getText().toString() + "\n Email: " + email.getText().toString() + "\n Password: " + password.getText().toString(), duration)
+        val toast = Toast.makeText(applicationContext, "Welcome, "+ name.getText().toString() + ", to the SignUpForm App", duration)
 
         var error = true
         if(name.getText().toString() == ""){
